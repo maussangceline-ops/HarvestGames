@@ -1,2 +1,27 @@
+# --- Environnement virtuel, secrets et système ---
+.venv/
+env/
+venv/
 .env
-**/.env
+**/.env*
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# --- Streamlit & Jupyter ---
+.streamlit/secrets.toml
+.ipynb_checkpoints
+
+# --- Formats de données lourds et archives ---
+*.gpkg
+*.7z.*
+*.parquet
+*.csv
+*.pdf
+*.nc
+
+# --- Dossiers de données volumineuses ---
+BDD_France_cultures/
+sols_france/
+data/bronze/
+data/argent/
