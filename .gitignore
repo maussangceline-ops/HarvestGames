@@ -216,3 +216,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+# Environnement virtuel et système
+.venv/
+.DS_Store
+__pycache__/
+.env
+
+# Formats de données lourds et archives
+*.gpkg
+*.7z.*
+*.parquet
+*.csv
+*.pdf
+*.nc
+
+# Dossiers de données volumineuses
+BDD_France_cultures/
+sols_france/
+data/bronze/
+data/argent/
+>>>>>>> 20e135e (Add .gitignore)
