@@ -1,8 +1,8 @@
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
 
-# Environnements virtuels
+# Virtual environment
 .venv/
 venv/
 
@@ -17,3 +17,6 @@ venv/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Python cache
+.pytest_cache/
