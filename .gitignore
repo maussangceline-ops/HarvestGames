@@ -19,6 +19,13 @@ venv/
 # Jupyter
 .ipynb_checkpoints/
 
+# Données locales
+*.csv
+*.parquet
+*.xlsx
+data/
+datasets/
+
 # Python cache
 .pytest_cache/
 =======
