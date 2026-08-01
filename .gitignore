@@ -230,3 +230,7 @@ ENV/
 .DS_Store
 Thumbs.db
 >>>>>>> 583b8e035306779ec9cc6567b22b406e4a60adc8
+
+#Version de base du projet 
+app_back_up_*.py
+app_backup*.py
