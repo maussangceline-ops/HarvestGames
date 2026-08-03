@@ -1,0 +1,15 @@
+services:
+  harvest-games:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: harvest-games
+
+    ports:
+      - "8501:8501"
+
+    env_file:
+      - .env
+
+    restart: unless-stopped
