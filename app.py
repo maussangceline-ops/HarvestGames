@@ -1262,10 +1262,43 @@ with col_carte_2:
         )
 
         selected_coordinates_id = None
+
         if map_event and map_event.selection.points:
-            customdata = map_event.selection.points[0].get("customdata")
-            if customdata:
-                selected_coordinates_id = int(customdata[0])
+            selected_point = map_event.selection.points[0]
+            customdata = selected_point.get("customdata")
+
+            raw_coordinates_id = None
+
+            if isinstance(customdata, dict):
+                raw_coordinates_id = customdata.get("coordinates_id")
+
+                if raw_coordinates_id is None and customdata:
+                    raw_coordinates_id = next(
+                        iter(customdata.values())
+                    )
+
+            elif isinstance(customdata, (list, tuple)):
+                if len(customdata) > 0:
+                    raw_coordinates_id = customdata[0]
+
+            elif hasattr(customdata, "tolist"):
+                values = customdata.tolist()
+
+                if isinstance(values, list) and values:
+                    raw_coordinates_id = values[0]
+                else:
+                    raw_coordinates_id = values
+
+            elif customdata is not None:
+                raw_coordinates_id = customdata
+
+            if raw_coordinates_id is not None:
+                try:
+                    selected_coordinates_id = int(
+                        raw_coordinates_id
+                    )
+                except (TypeError, ValueError, OverflowError):
+                    selected_coordinates_id = None
 
         if selected_coordinates_id is None:
             st.caption(
