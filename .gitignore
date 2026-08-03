@@ -1,4 +1,35 @@
-<<<<<<< Updated upstream
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Données locales
+*.csv
+*.parquet
+*.xlsx
+data/
+datasets/
+
+# Python cache
+.pytest_cache/
+=======
+
 # --- Environnement virtuel, secrets et système ---
 .venv/
 =======
@@ -198,3 +229,4 @@ ENV/
 # Fichiers système (macOS / Windows)
 .DS_Store
 Thumbs.db
+>>>>>>> 583b8e035306779ec9cc6567b22b406e4a60adc8
