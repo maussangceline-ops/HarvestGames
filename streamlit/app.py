@@ -8,6 +8,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+import base64
+from pathlib import Path
 
 # =========================================================
 # CONFIGURATION GÉNÉRALE
@@ -664,9 +666,14 @@ except Exception as error:
 
 st.title("🌾 Harvest Games — Observatoire agricole du futur")
 
-banner_path = ASSETS_DIR / "banner.png"
-if banner_path.exists():
-    st.image(str(banner_path), use_container_width=True)
+# Workaround Streamlit 1.60 : st.image renvoie 500 sur /media/
+banner_path = Path(__file__).parent / "assets" / "banner.jpg"
+banner_b64 = base64.b64encode(banner_path.read_bytes()).decode()
+
+st.markdown(
+    f'<img src="data:image/jpeg;base64,{banner_b64}" style="width:100%;">',
+    unsafe_allow_html=True,
+)
 
 st.markdown(
     """
